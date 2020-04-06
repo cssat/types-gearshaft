@@ -4,6 +4,9 @@
     "@types/pg": "^7.14.3",
     "dtslint": "^3.4.1"
   },
+  "devDependencies": {
+    "types-publisher": "github:Microsoft/types-publisher#production"
+  },
   
   "name": "@types/gearshaft",
   "version": "1.0.0",
