@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "dependencies": {
+    "@types/pg": "^7.14.3"
+  },
+  "name": "@types/gearshaft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Pearson",
+  "license": "MIT",
+  "description": ""
+}
