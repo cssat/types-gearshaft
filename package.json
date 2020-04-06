@@ -10,7 +10,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "dtslint"
+    "lint": "dtslint",
+    "watch": "fswatch -r ./**/*.ts -e 'node_modules' -e '#' -e '.git' | xargs -n1 -I {} yarn lint"
   },
   "author": "Adam Pearson",
   "license": "MIT",
