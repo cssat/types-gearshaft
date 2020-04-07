@@ -8,6 +8,4 @@ interface DatabaseConfig {
   password?: string;
 }
 
-export function createPostgresGateway(
-  settings: DatabaseConfig
-): PostgresGateway;
+export function createPostgresGateway(settings: DatabaseConfig): PostgresGateway;

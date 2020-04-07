@@ -3,10 +3,7 @@ import { Log } from '../logging';
 
 type ConsumerHandlerFunc<T> = (message: T) => void;
 type ConsumerHandlerRegistry = {
-  register<T>(
-    messageType: GenericConstructor<T>,
-    handler: ConsumerHandlerFunc<T>
-  ): void;
+  register<T>(messageType: GenericConstructor<T>, handler: ConsumerHandlerFunc<T>): void;
   handle(messageData: any): void;
 };
 
@@ -15,6 +12,4 @@ type ConsumerHandlerCreateOptions = {
   log?: Log;
 };
 
-export function createConsumerHandlerRegistry(
-  options: ConsumerHandlerCreateOptions
-): ConsumerHandlerRegistry;
+export function createConsumerHandlerRegistry(options: ConsumerHandlerCreateOptions): ConsumerHandlerRegistry;

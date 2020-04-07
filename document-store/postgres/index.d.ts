@@ -9,6 +9,4 @@ type CreatePostgresDocumentStoreParams = {
   table: string;
 };
 
-export function createPostgresDocumentStore<T>(
-  options: CreatePostgresDocumentStoreParams
-): DocumentStore<T>;
+export function createPostgresDocumentStore<T>(options: CreatePostgresDocumentStoreParams): DocumentStore<T>;

@@ -14,12 +14,7 @@ type Consumer = {
 };
 type ConsumerHandlerFunc<T> = (message: T) => void; // TODO: share with consumer handler registry?
 
-type RegisterFn = (
-  register: <T>(
-    messageType: GenericConstructor<T>,
-    handler: ConsumerHandlerFunc<T>
-  ) => void
-) => void;
+type RegisterFn = (register: <T>(messageType: GenericConstructor<T>, handler: ConsumerHandlerFunc<T>) => void) => void;
 
 export function createConsumer(options: {
   log: Log;

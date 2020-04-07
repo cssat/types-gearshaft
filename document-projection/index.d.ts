@@ -12,6 +12,4 @@ type CreateDocumentProjectionParams<M, E> = {
   projection: EntityProjection;
 };
 
-export function createDocumentProjection<M, E>(
-  options: CreateDocumentProjectionParams<M, E>
-): void;
+export function createDocumentProjection<M, E>(options: CreateDocumentProjectionParams<M, E>): void;
