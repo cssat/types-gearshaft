@@ -5,9 +5,15 @@
     "dtslint": "^3.4.1"
   },
   "devDependencies": {
+    "@substantial/eslint-config": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.4",
     "types-publisher": "github:Microsoft/types-publisher#production"
   },
-  
   "name": "@types/gearshaft",
   "version": "1.0.0",
   "main": "index.js",
@@ -18,5 +24,10 @@
   },
   "author": "Adam Pearson",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  }
 }
