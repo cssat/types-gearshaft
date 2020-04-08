@@ -1,5 +1,5 @@
 import { Log } from '../logging';
-import { GenericConstructor } from '../index';
+import { GenericConstructor, Message } from '../index';
 import { MessageStore } from '../message-store';
 
 interface Runner {
@@ -10,7 +10,7 @@ interface Runner {
 
 interface Consumer {
   start: () => Runner;
-  dispatch: <T>(messageData: T) => Promise<void>;
+  dispatch: (messageData: Message<object>) => Promise<void>;
   positionStore: any; // TODO: what is this?
 }
 

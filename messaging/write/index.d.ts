@@ -7,6 +7,6 @@ type CreateWriterOptions = {
   messageStore: MessageStore;
 };
 
-type WriteFn = (message: Message, streaName: string) => number;
+type WriteFn = <T>(message: Message<T>, streaName: string) => number;
 
 export function createWriter(options: CreateWriterOptions): WriteFn;

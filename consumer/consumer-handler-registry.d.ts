@@ -1,10 +1,10 @@
-import { GenericConstructor } from '../index';
+import { GenericConstructor, Message } from '../index';
 import { Log } from '../logging';
 
 type ConsumerHandlerFunc<T> = (message: T) => void;
 type ConsumerHandlerRegistry = {
   register<T>(messageType: GenericConstructor<T>, handler: ConsumerHandlerFunc<T>): void;
-  handle(messageData: any): void;
+  handle<T>(messageData: Message<T>): void;
 };
 
 type ConsumerHandlerCreateOptions = {
