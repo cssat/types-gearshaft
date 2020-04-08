@@ -6,6 +6,7 @@ This is our WIP place to get this types repository in shape before getting it in
 
 ### Setting up the environment
 
+1. `yarn install`
 1. Start compilation via `yarn watch`
 
 ### Adding Types
