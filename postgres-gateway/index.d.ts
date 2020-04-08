@@ -1,4 +1,6 @@
-import { PostgresGateway } from '../';
+import { Pool } from 'pg';
+
+export class PostgresGateway extends Pool {}
 
 interface DatabaseConfig {
   type: string;

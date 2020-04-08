@@ -1,6 +1,6 @@
 import { MessageStore } from '../';
 import { Log } from '../../logging';
-import { PostgresGateway } from '../../';
+import { PostgresGateway } from '../../postgres-gateway';
 type MessageStoreCreateParams = {
   log?: Log;
   host?: string;

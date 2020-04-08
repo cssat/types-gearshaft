@@ -1,4 +1,5 @@
-import { ClassLike, PostgresGateway } from '../..';
+import { ClassLike } from '../..';
+import { PostgresGateway } from '../../postgres-gateway';
 import { DocumentStore } from '../';
 
 type CreatePostgresDocumentStoreParams = {
