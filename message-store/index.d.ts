@@ -1,4 +1,4 @@
-export interface MessageStore {
+interface MessageStore {
   get(streamName: string): any;
   read: (streamName: string) => any;
 }
@@ -15,4 +15,6 @@ interface CreateCategoryResults {
   entityStreamName: (id: string, extra?: CategoryExtra) => string;
 }
 
-export function createCategory(category: string): CreateCategoryResults;
+declare function createCategory(category: string): CreateCategoryResults;
+
+export { MessageStore, createCategory };

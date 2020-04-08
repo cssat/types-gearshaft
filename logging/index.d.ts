@@ -1,10 +1,12 @@
 type LogParam = any;
 
-export interface Log {
+interface Log {
   info(...args: LogParam[]): void;
   warn(...args: LogParam[]): void;
   error(...args: LogParam[]): void;
   debug(...args: LogParam[]): void;
 }
 
-export function createLog(): Log;
+declare function createLog(): Log;
+
+export { Log, createLog };

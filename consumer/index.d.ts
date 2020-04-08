@@ -18,7 +18,7 @@ type ConsumerHandlerFunc<T> = (message: T) => void; // TODO: share with consumer
 
 type RegisterFn = (register: <T>(messageType: GenericConstructor<T>, handler: ConsumerHandlerFunc<T>) => void) => void;
 
-export function createConsumer(options: {
+declare function createConsumer(options: {
   log: Log;
   name: string;
   positionUpdateInterval?: number;
@@ -33,3 +33,5 @@ export function createConsumer(options: {
   lowWaterMark?: number;
   pollingIntervalMs?: number;
 }): Consumer;
+
+export { Runner, Consumer, createConsumer };

@@ -1,7 +1,9 @@
 type Register = <T>(messageType: { new (...args: any[]): T }, handler: (entity: any, input: T) => void) => void;
 
-export interface EntityProjection {
+interface EntityProjection {
   project: any;
   registerHandlers: any;
 }
-export function createEntityProjection(callback: (register: Register) => void): EntityProjection;
+declare function createEntityProjection(callback: (register: Register) => void): EntityProjection;
+
+export { EntityProjection, createEntityProjection };

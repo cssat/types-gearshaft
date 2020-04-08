@@ -9,4 +9,6 @@ interface EntityStoreCreateOptions {
   messageStore: MessageStore;
 }
 
-export function createEntityStore(options: EntityStoreCreateOptions): any;
+declare function createEntityStore(options: EntityStoreCreateOptions): any;
+
+export { createEntityStore };
