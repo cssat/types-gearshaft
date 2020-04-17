@@ -8,12 +8,13 @@ type CreateWriterOptions = {
   messageStore: MessageStore;
 };
 
-type WriteFn = (message: Message, streamName: string, options?: { expectedVersion?: number }) => Promise<number>;
+interface WriteFn {
+  (message: Message, streamName: string, options?: { expectedVersion?: number }): Promise<number>;
+}
 
-export type Writer = {
-  write: WriteFn;
+export interface Writer extends WriteFn {
   emitter: ClassLike;
   initial: (message: Message, streamName: string) => Promise<number>;
-};
+}
 
 export function createWriter(options: CreateWriterOptions): Writer;
