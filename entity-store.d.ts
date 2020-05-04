@@ -13,9 +13,9 @@ type RecordMetadata = {
   version: number;
 };
 
-export type EntityStore = {
-  fetch: (id: string) => Promise<ClassLike>;
-  fetchRecord: (id: string) => Promise<[ClassLike, RecordMetadata]>;
+export type EntityStore<T> = {
+  fetch: (id: string) => Promise<T>;
+  fetchRecord: (id: string) => Promise<[T, RecordMetadata]>;
 };
 
-export function createEntityStore(options: EntityStoreCreateOptions): EntityStore;
+export function createEntityStore<T>(options: EntityStoreCreateOptions): EntityStore<T>;
