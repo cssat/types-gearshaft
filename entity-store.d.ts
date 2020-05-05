@@ -1,10 +1,10 @@
-import { ClassLike } from './';
+import { GenericConstructor } from './';
 import { MessageStore } from './message-store';
 import { EntityProjection } from './entity-projection';
 
-type EntityStoreCreateOptions = {
+type EntityStoreCreateOptions<T> = {
   category: string;
-  entity: ClassLike;
+  entity: GenericConstructor<T>;
   projection: EntityProjection;
   messageStore: MessageStore;
 };
@@ -13,9 +13,9 @@ type RecordMetadata = {
   version: number;
 };
 
-export type EntityStore = {
-  fetch: (id: string) => Promise<ClassLike>;
-  fetchRecord: (id: string) => Promise<[ClassLike, RecordMetadata]>;
+export type EntityStore<T> = {
+  fetch: (id: string) => Promise<T>;
+  fetchRecord: (id: string) => Promise<[T, RecordMetadata]>;
 };
 
-export function createEntityStore(options: EntityStoreCreateOptions): EntityStore;
+export function createEntityStore<T>(options: EntityStoreCreateOptions<T>): EntityStore<T>;
