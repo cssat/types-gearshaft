@@ -1,10 +1,10 @@
-import { ClassLike } from './';
+import { GenericConstructor } from './';
 import { MessageStore } from './message-store';
 import { EntityProjection } from './entity-projection';
 
 type EntityStoreCreateOptions<T> = {
   category: string;
-  entity: T;
+  entity: GenericConstructor<T>;
   projection: EntityProjection;
   messageStore: MessageStore;
 };
