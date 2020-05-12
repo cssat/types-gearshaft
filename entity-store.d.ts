@@ -5,7 +5,7 @@ import { EntityProjection } from './entity-projection';
 type EntityStoreCreateOptions<T> = {
   category: string;
   entity: GenericConstructor<T>;
-  projection: EntityProjection;
+  projection: EntityProjection<T>;
   messageStore: MessageStore;
 };
 

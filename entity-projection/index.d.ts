@@ -1,7 +1,12 @@
-type Register = <T>(messageType: { new (...args: any[]): T }, handler: (entity: any, input: T) => void) => void;
+import { GenericConstructor } from '../index';
 
-export interface EntityProjection {
-  project: any;
-  registerHandlers: any;
+export type RegisterProjection = <T, U>(
+  messageType: GenericConstructor<U>,
+  handler: (entity: T, input: U) => void,
+) => void;
+
+export interface EntityProjection<T> {
+  project: Function;
+  registerHandlers: Function;
 }
-export function createEntityProjection(callback: (register: Register) => void): EntityProjection;
+export function createEntityProjection<T>(callback: (register: RegisterProjection) => void): EntityProjection<T>;
