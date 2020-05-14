@@ -1,5 +1,6 @@
 import { Log } from '../logging';
-import { GenericConstructor } from '../index';
+import { RegisterHandlers } from './consumer-handler-registry';
+
 import { MessageStore } from '../message-store';
 type Runner = {
   pause: () => Promise<void>;
@@ -12,15 +13,12 @@ type Consumer = {
   dispatch: <T>(messageData: T) => Promise<void>;
   positionStore: any; // TODO: what is this?
 };
-type ConsumerHandlerFunc<T> = (message: T) => void; // TODO: share with consumer handler registry?
-
-type RegisterFn = (register: <T>(messageType: GenericConstructor<T>, handler: ConsumerHandlerFunc<T>) => void) => void;
 
 export function createConsumer(options: {
   log: Log;
   name: string;
   positionUpdateInterval?: number;
-  registerHandlers: RegisterFn;
+  registerHandlers: RegisterHandlers;
   messageStore: MessageStore;
   category: string;
   correlation?: string;
