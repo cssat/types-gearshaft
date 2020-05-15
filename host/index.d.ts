@@ -6,6 +6,6 @@ interface Host extends EventEmitter {
   unpause: () => void;
 }
 
-type RegisterFn = (consumer: Consumer) => void; // TODO: will be a consumer type
-type Register = { register: RegisterFn };
-export function startHost(callback: (register: Register) => void): Host;
+type RegisterConsumer = (consumer: Consumer) => void;
+type RegisterConsumers = { register: RegisterConsumer };
+export function startHost(callback: (register: RegisterConsumers) => void): Host;

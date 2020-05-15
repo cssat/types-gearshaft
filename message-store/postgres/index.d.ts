@@ -4,7 +4,7 @@ import { PostgresGateway } from '../../';
 type MessageStoreCreateParams = {
   log?: Log;
   host?: string;
-  port?: string;
+  port?: number;
   database?: string;
   user?: string;
   password?: string;
