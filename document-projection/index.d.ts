@@ -9,7 +9,7 @@ type CreateDocumentProjectionParams<M, E> = {
   entity: GenericConstructor<E>;
   identify: IdentifyFn<M>;
   log: Log;
-  projection: EntityProjection;
+  projection: EntityProjection<E>;
 };
 
 export function createDocumentProjection<M, E>(options: CreateDocumentProjectionParams<M, E>): void;
