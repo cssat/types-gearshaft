@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@2.0.1
+
+jobs:
+  build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: yarn.lock
+      - run: yarn build
+
+workflows:
+    build:
+      jobs:
+        - build
