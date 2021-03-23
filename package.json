@@ -1,13 +1,13 @@
 {
   "private": true,
   "dependencies": {
-    "@types/pg": "^7.14.3",
-    "dtslint": "^3.6.12"
+    "@types/pg": "^7.14.3"
   },
   "resolutions": {
     "ssri": "^8.0.1"
   },
   "devDependencies": {
+    "dtslint": "^3.6.12",
     "@substantial/eslint-config": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
